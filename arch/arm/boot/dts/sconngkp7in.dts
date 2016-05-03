@@ -48,7 +48,7 @@
 
 / {
 	model = "sconnGKP 7inch";
-	compatible = "atmel,sama5d4-xplained", "atmel,sama5d4", "atmel,sama5";
+	compatible = "sconn,gkp7in","sconn,sconngkp";
 
 	chosen {
 		bootargs = "ignore_loglevel earlyprintk";
