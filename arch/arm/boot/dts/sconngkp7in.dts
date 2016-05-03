@@ -1,8 +1,8 @@
 /*
- * Device Tree file for the sconn Graphical Keypad 7 inch
+ * Device Tree file for the Sconn Graphical Keypad 7 inch
  *
- *  Copyright (C) 2015 Sconn,
- *                2015 Dominik Guz <dominik.guz11@gmail.com>
+ *  Copyright (C) 2016 Sconn,
+ *                2016 Dominik Guz <dominik.guz11@gmail.com>
  *
  * This file is dual-licensed: you can use it either under the terms
  * of the GPL or the X11 license, at your option. Note that this dual
@@ -47,7 +47,7 @@
 #include "sconngkp7in.dtsi"
 
 / {
-	model = "sconnGKP7in";
+	model = "sconnGKP 7inch";
 	compatible = "atmel,sama5d4-xplained", "atmel,sama5d4", "atmel,sama5";
 
 	chosen {
