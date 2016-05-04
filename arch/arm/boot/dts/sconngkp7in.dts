@@ -50,14 +50,6 @@
 	model = "sconnGKP 7inch";
 	compatible = "sconn,gkp7in","sconn,sconngkp";
 
-	aliases {
-		busHS = &uart0;
-		busLS = &uart1;
-		spi1  = &spi1;
-		spi2 = &spi2;
-		spi3 = &spi3;
-	};
-
 	chosen {
 		bootargs = "ignore_loglevel earlyprintk";
 		stdout-path = "serial0:115200n8";
@@ -110,16 +102,6 @@
 
 			};
 
-
-			spi1: spi@f8008000 {
-				cs-gpios = <&pioB 4 0>, <0>, <0>, <0>;
-            			status = "okay";
-	            		spidev@0 {
-                                        compatible = "linux,spidev";
-                                        spi-max-frequency = <24000000>;
-                                        reg = <0>;
-                                };
-			};
 
 			i2c0: i2c@f8014000 {
 				status = "okay";
