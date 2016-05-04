@@ -50,6 +50,14 @@
 	model = "sconnGKP 7inch";
 	compatible = "sconn,gkp7in","sconn,sconngkp";
 
+	aliases {
+		busHS = &uart0;
+		busLS = &uart1;
+		spi1  = &spi1;
+		spi2 = &spi2;
+		spi3 = &spi3;
+	};
+
 	chosen {
 		bootargs = "ignore_loglevel earlyprintk";
 		stdout-path = "serial0:115200n8";
@@ -81,13 +89,36 @@
 	ahb {
 		apb {
 			spi0: spi@f8010000 {
-				cs-gpios = <&pioC 3 0>, <0>, <0>, <0>;
+				cs-gpios = <&pioC 3 0>, <&pioD 9 0>, <&pioD 10 0>, <0>;
 				status = "okay";
 				m25p80@0 {
 					compatible = "atmel,at25df321a";
 					spi-max-frequency = <50000000>;
 					reg = <0>;
 				};
+				spidev@0 {
+                                        compatible = "linux,spidev";
+                                        spi-max-frequency = <24000000>;
+                                        reg = <1>;
+                                };
+
+		               spidev@1 {
+                                        compatible = "linux,spidev";
+                                        spi-max-frequency = <24000000>;
+                                        reg = <2>;
+                                };
+
+			};
+
+
+			spi1: spi@f8008000 {
+				cs-gpios = <&pioB 4 0>, <0>, <0>, <0>;
+            			status = "okay";
+	            		spidev@0 {
+                                        compatible = "linux,spidev";
+                                        spi-max-frequency = <24000000>;
+                                        reg = <0>;
+                                };
 			};
 
 			i2c0: i2c@f8014000 {
