@@ -90,18 +90,27 @@
 				};
 			};
 
-                        spi1: spi@fc018000 {
+
+			spi1: spi@fc018000 {
                                 cs-gpios = <&pioB 21 0>, <0>, <0>, <0>;
                                 status = "okay";
-                                reg = <0xfc018000 0x100>;
-                                pinctrl-names = "default";
-                                pinctrl-0 = <&pinctrl_spi1>;
                                 spidev@0 {
                                         compatible = "linux,spidev";
                                         spi-max-frequency = <40000000>;
                                         reg = <0>;
                                 };
                         };
+
+  			spi2: spi@fc01c000 {
+                                cs-gpios = <&pioD 17 0>, <0>, <0>, <0>;
+                                status = "okay";
+                                spidev@0 {
+                                        compatible = "linux,spidev";
+                                        spi-max-frequency = <20000000>;
+                                        reg = <0>;
+                                };
+                        };
+
 
 			i2c0: i2c@f8014000 {
 				status = "okay";
@@ -136,6 +145,11 @@
 			};
 
 			usart4: serial@fc010000 {
+				status = "okay";
+			};
+
+			spi1: spi@fc018000 {
+				cs-gpios = <&pioB 21 0>;
 				status = "okay";
 			};
 

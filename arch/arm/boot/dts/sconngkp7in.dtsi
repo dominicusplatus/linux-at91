@@ -67,6 +67,12 @@
 				};
 			};
 
+                        spi1: spi@fc018000 {
+                                compatible = "linux,spidev";
+                                reg = <0xfc018000 0x100>;
+                                status = "disabled";
+                        };
+
 			hlcdc: hlcdc@f0000000 {
 				status = "okay";
 
