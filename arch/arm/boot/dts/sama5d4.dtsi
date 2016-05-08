@@ -924,6 +924,30 @@
 				status = "disabled";
 			};
 
+                    	spi1: spi@fc018000 {
+                                 #address-cells = <1>;
+                                 #size-cells = <0>;
+                                 compatible = "linux,spidev";
+                                 reg = <0xfc018000 0x100>;
+                                 pinctrl-names = "default";
+                                 pinctrl-0 = <&pinctrl_spi1>;
+                                 clocks = <&spi1_clk>;
+                                 clock-names = "spi_clk";
+                                 status = "disabled";
+                         };
+ 
+                     	spi2: spi@fc01c000 {
+                                 #address-cells = <2>;
+                                 #size-cells = <0>;
+                                 compatible = "linux,spidev";
+                                 reg = <0xfc01c000 0x100>;
+                                 pinctrl-names = "default";
+                                 pinctrl-0 = <&pinctrl_spi2>;
+                                 clocks = <&spi2_clk>;
+                                 clock-names = "spi_clk";
+                                 status = "disabled";
+                       };
+
 			i2c0: i2c@f8014000 {
 				compatible = "atmel,at91sam9x5-i2c";
 				reg = <0xf8014000 0x4000>;
